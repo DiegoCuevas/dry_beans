@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_06_230015) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_07_053958) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "deliveries", force: :cascade do |t|
+    t.bigint "path_id", null: false
+    t.string "description"
+    t.integer "status", default: 1
+    t.date "delivery_date"
+    t.time "delivery_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "signature"
+    t.string "observations"
+    t.string "delivery_photo"
+    t.index ["path_id"], name: "index_deliveries_on_path_id"
+  end
 
   create_table "journeys", force: :cascade do |t|
     t.bigint "origin_id", null: false
@@ -32,6 +46,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_06_230015) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "paths", force: :cascade do |t|
+    t.bigint "journey_id", null: false
+    t.date "delivery_date"
+    t.time "start_time"
+    t.time "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["journey_id"], name: "index_paths_on_journey_id"
+  end
+
+  add_foreign_key "deliveries", "paths"
   add_foreign_key "journeys", "locations", column: "destination_id"
   add_foreign_key "journeys", "locations", column: "origin_id"
+  add_foreign_key "paths", "journeys"
 end
