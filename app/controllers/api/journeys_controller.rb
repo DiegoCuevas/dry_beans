@@ -13,8 +13,8 @@ class Api::JourneysController < ApplicationController
     {
       id: journey.id,
       name: journey.name,
-      origin: Location.find(journey.origin_id).name,
-      destination: Location.find(journey.destination_id).name,
+      origin: journey.origin.name,
+      destination: journey.destination.name,
       paths: journey.paths.map { |path| serialize_path(path) }
     }
   end
