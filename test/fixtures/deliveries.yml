@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  path: one
+  description: MyString
+  status: 
+  delivery_date: 2024-04-06
+  delivery_time: 2024-04-06 18:46:44
+
+two:
+  path: two
+  description: MyString
+  status: 
+  delivery_date: 2024-04-06
+  delivery_time: 2024-04-06 18:46:44
