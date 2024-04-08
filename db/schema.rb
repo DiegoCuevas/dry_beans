@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_07_053958) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_08_010515) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_07_053958) do
     t.string "signature"
     t.string "observations"
     t.string "delivery_photo"
+    t.string "sender_first_name"
+    t.string "sender_last_name"
+    t.string "sender_full_name"
+    t.string "receiver_signature"
+    t.string "receiver_first_name"
+    t.string "receiver_last_name"
+    t.string "receiver_full_name"
     t.index ["path_id"], name: "index_deliveries_on_path_id"
   end
 
