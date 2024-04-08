@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   namespace :api do
     resources :journeys, only: [:show]
-    resources :deliveries, only: [:create]
+    resources :deliveries, only: [:create] do
+      patch 'delivered', on: :member
+    end
   end
 end
