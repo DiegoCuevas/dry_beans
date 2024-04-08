@@ -12,7 +12,7 @@ class Api::DeliveriesController < ApplicationController
   def delivered
     delivery = Delivery.find(params[:id])
 
-    if delivery.update(received_params) && !params[:delivery_photo].blank?
+    if delivery.update_receiver_info(received_params)
       render json: { message: 'Details updated successfully', delivery: delivery }, status: :ok
     else
       render json: { error: 'Failed to update details', errors: delivery.errors.full_messages }, status: :unprocessable_entity
@@ -34,3 +34,4 @@ class Api::DeliveriesController < ApplicationController
       :receiver_last_name
     )
   end
+end
