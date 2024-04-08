@@ -2,8 +2,8 @@ FactoryBot.define do
   factory :delivery do
     path
     description { "Delivery description" }
-    status { :pending }
-    delivery_date { Date.today }
-    delivery_time { Time.now }
+    signature { "example signature" }
+    sender_first_name { "Diego" }
+    sender_last_name { "Cuevas" }
   end
 end
