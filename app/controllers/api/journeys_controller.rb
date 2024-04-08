@@ -37,8 +37,15 @@ class Api::JourneysController < ApplicationController
       delivery_date: delivery.delivery_date,
       delivery_time: delivery.delivery_time&.strftime('%H:%M'),
       signature: delivery.signature,
+      sender_first_name: delivery.sender_first_name,
+      sender_last_name: delivery.sender_last_name,
+      sender_full_name: delivery.sender_full_name,
       observations: delivery.observations,
-      delivery_photo: delivery.delivery_photo
+      delivery_photo: delivery.delivery_photo,
+      receiver_first_name: delivery.receiver_first_name,
+      receiver_last_name: delivery.receiver_last_name,
+      receiver_full_name: delivery.receiver_full_name,
+      receiver_signature: delivery.receiver_signature
     }
   end
 end
