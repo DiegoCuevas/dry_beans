@@ -15,20 +15,26 @@ Welcome to the documentation for the Dry Beans API. This API is designed to mana
   Instructions on how to install and set up the project.
 
 1. Clone the repository:
-  ```bash
-    git clone git@github.com:DiegoCuevas/dry_beans.git
-    
-  ```
+```bash
+git clone git@github.com:DiegoCuevas/dry_beans.git  
+```
 
 2. Install dependencies:
-  ```
-    bundle install
-  ```
+```bash
+bundle install
+```
+
 3. Set up the database:
-  ```
-    rails db:create
-    rails db:migrate
-  ``` 
+```bash
+rails db:create
+rails db:migrate
+```
+
+4. Fake data in seeds.rb (optional) 
+```bash
+rails db:seed
+```
+
 
 ## Usage 
 
